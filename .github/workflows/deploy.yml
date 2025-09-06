@@ -22,20 +22,18 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "npm"
-      # Install dependencies without needing a lock file
+      # ✅ fresh install, no lock file needed
       - run: npm install --no-fund --no-audit --legacy-peer-deps
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
+
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
     steps:
       - id: deploy
         uses: actions/deploy-pages@v4
-
