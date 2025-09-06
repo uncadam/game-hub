@@ -22,7 +22,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      # ✅ fresh install, no lock file needed
       - run: npm install --no-fund --no-audit --legacy-peer-deps
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
