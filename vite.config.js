@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// 👇 Important: update "game-hub" if your repo name changes
+// 👇 MUST match your GitHub repo name exactly
 export default defineConfig({
   plugins: [react()],
   base: "/game-hub/"
